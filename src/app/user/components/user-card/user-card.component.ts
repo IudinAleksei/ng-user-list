@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-card',
@@ -7,11 +6,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./user-card.component.scss']
 })
 export class UserCardComponent implements OnInit {
-  public userID = '';
 
-  constructor(public route: ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.userID = this.route.snapshot.params.id;
   }
 }
