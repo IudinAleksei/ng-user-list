@@ -16,7 +16,9 @@ export class TodoListComponent implements OnInit {
     this.usersService
       .getUserTodos(1)
       .subscribe({
-        next: res => this.todos = res
+        next: res => this.todos = res,
+        error: err => console.warn('Error: ', err),
+        complete: () => null,
       });
   }
 }

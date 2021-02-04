@@ -3,14 +3,4 @@
                (page)="pageEvent = $event"
                >
 </mat-paginator>
-<ul>
-  <li *ngFor="let user of users">{{user.company.name}}</li>
-</ul>
-<!-- <table>
-  <app-user-item></app-user-item>
-  <app-user-item></app-user-item>
-  <app-user-item></app-user-item>
-</table>
-<mat-list role="list">
-  <mat-list-item role="listitem">{{pageEvent.pageIndex}}</mat-list-item>
-</mat-list> -->
+<app-user-item *ngFor="let user of users" [user]="user"></app-user-item>
