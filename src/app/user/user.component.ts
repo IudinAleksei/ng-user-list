@@ -12,9 +12,11 @@ export class UserComponent implements OnInit {
   constructor(public route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.userID = this.route.snapshot.params.id;
-    if (+this.userID > 10) {
-      this.router.navigate(['user']);
-    }
+    this.route.params.subscribe(params => {
+      this.userID = params.id;
+      if (+this.userID > 10) {
+        this.router.navigate(['user']);
+      }
+    });
   }
 }
