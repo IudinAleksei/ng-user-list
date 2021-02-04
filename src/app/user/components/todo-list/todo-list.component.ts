@@ -11,10 +11,12 @@ import { ITodo } from './../../../models/todo.model';
 export class TodoListComponent implements OnInit {
   public userID = '';
   todos: ITodo[] = [];
+  displayedColumns: string[] = ['id', 'title', 'status'];
 
   constructor(private usersService: UsersService, public route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log(this.displayedColumns.length)
     this.route.params.subscribe(params => {
       this.userID = params.id;
     });
