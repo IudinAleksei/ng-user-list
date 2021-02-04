@@ -1,3 +1,5 @@
+import { IUser } from './../../models/user.model';
+import { UsersService } from './../../services/users.service';
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 
@@ -8,14 +10,17 @@ import { PageEvent } from '@angular/material/paginator';
 })
 
 export class UserListComponent implements OnInit {
-
+  users: IUser[] = [];
   length = 10;
   pageSize = 3;
 
   pageEvent: PageEvent = new PageEvent();
 
-  constructor() { }
+  constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
+    this.usersService
+      .getUsersList()
+      .subscribe(res => this.users = res);
   }
 }
