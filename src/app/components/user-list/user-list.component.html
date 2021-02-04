@@ -3,11 +3,11 @@
                (page)="pageEvent = $event"
                >
 </mat-paginator>
+<table>
+  <app-user-item></app-user-item>
+  <app-user-item></app-user-item>
+  <app-user-item></app-user-item>
+</table>
 <mat-list role="list">
-  <mat-list-item role="listitem">Item 1</mat-list-item>
-  <mat-list-item role="listitem">Item 2</mat-list-item>
-  <mat-list-item role="listitem">Item 3</mat-list-item>
-  <mat-list-item role="listitem">Item 4</mat-list-item>
-  <mat-list-item role="listitem">Item 5</mat-list-item>
   <mat-list-item role="listitem">{{pageEvent.pageSize}}</mat-list-item>
 </mat-list>
