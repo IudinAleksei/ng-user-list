@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
 import { ITodo } from './../../../models/todo.model';
 
@@ -8,13 +9,18 @@ import { ITodo } from './../../../models/todo.model';
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent implements OnInit {
+  public userID = '';
   todos: ITodo[] = [];
 
-  constructor(private usersService: UsersService) { }
+  constructor(private usersService: UsersService, public route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.userID = params.id;
+    });
+
     this.usersService
-      .getUserTodos(1)
+      .getUserTodos(this.userID)
       .subscribe({
         next: res => this.todos = res,
         error: err => console.warn('Error: ', err),

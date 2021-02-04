@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IUser } from './../../models/user.model';
 
 @Component({
@@ -31,9 +32,12 @@ export class UserItemComponent implements OnInit {
     },
   };
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  handleClick(id: number): void {
+    this.router.navigate(['user', id]);
+  }
 }

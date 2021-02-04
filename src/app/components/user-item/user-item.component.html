@@ -1,7 +1,5 @@
-<div class="user-item">
-  <p>
-    <img width="120" height="180" src="https://via.placeholder.com/120x180">
-  </p>
+<div class="user-item" (click)="handleClick(user.id)">
+  <img width="120" height="180" src="https://via.placeholder.com/120x180">
   <p>{{user.name}}</p>
   <p>{{user.username}}</p>
   <p>{{user.email}}</p>

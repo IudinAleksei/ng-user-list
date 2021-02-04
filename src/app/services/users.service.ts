@@ -26,7 +26,7 @@ export class UsersService {
       );
   }
 
-  getUserTodos(id: number): Observable<ITodo[]> {
+  getUserTodos(id: string): Observable<ITodo[]> {
     const params = new HttpParams()
       .set(this.TODOS_PARAM, id.toString());
 
