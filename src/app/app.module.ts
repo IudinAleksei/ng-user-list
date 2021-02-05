@@ -3,14 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserItemComponent } from './components/user-item/user-item.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FilterComponent } from './components/filter/filter.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
@@ -19,9 +20,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
-    UserItemComponent,
     HeaderComponent,
-    FilterComponent,
     UserListComponent,
     NotFoundComponent
   ],
@@ -31,8 +30,11 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     BrowserAnimationsModule,
     HttpClientModule,
     MatPaginatorModule,
-    MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
 import { ITodo } from './../../../models/todo.model';
 
@@ -13,20 +13,20 @@ export class TodoListComponent implements OnInit {
   todos: ITodo[] = [];
   displayedColumns: string[] = ['id', 'title', 'status'];
 
-  constructor(private usersService: UsersService, public route: ActivatedRoute) { }
+  constructor(private usersService: UsersService, public route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    console.log(this.displayedColumns.length)
     this.route.params.subscribe(params => {
       this.userID = params.id;
     });
 
     this.usersService
       .getUserTodos(this.userID)
-      .subscribe({
-        next: res => this.todos = res,
-        error: err => console.warn('Error: ', err),
-        complete: () => null,
+      .subscribe(res => {
+        this.todos = res;
+        if (!this.todos.length) {
+          this.router.navigate(['user']);
+        }
       });
   }
 }

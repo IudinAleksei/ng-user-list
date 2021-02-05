@@ -1,6 +1,57 @@
-<mat-paginator [length]="length"
-               [pageSize]="pageSize"
-               (page)="pageEvent = $event"
-               >
-</mat-paginator>
-<app-user-item *ngFor="let user of users" [user]="user"></app-user-item>
+<div class="user-list">
+  <mat-paginator
+      [length]="length"
+      [pageSize]="pageSize"
+  ></mat-paginator>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Filter</mat-label>
+    <mat-select [(value)]="selectAll">
+      <mat-option value="all" default>
+        All Company
+      </mat-option>
+      <!-- <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option> -->
+    </mat-select>
+  </mat-form-field>
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="photo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Photo </th>
+        <td mat-cell *matCellDef="let user"> {{user.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Username </th>
+        <td mat-cell *matCellDef="let user"> {{user.username}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+        <td mat-cell *matCellDef="let user"> {{user.email}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
+        <td mat-cell *matCellDef="let user"> {{user.address}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="company">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Company </th>
+        <td mat-cell *matCellDef="let user"> {{user.company.name}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+</div>

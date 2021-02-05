@@ -9,7 +9,6 @@ import { UserRoutingModule } from './user-routing.module';
 import { UserComponent } from './user.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
-import { TodoItemComponent } from './components/todo-item/todo-item.component';
 
 
 @NgModule({
@@ -17,7 +16,6 @@ import { TodoItemComponent } from './components/todo-item/todo-item.component';
     UserComponent,
     UserCardComponent,
     TodoListComponent,
-    TodoItemComponent
   ],
   imports: [
     CommonModule,
