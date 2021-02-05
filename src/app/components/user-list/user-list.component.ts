@@ -5,11 +5,6 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
-interface Food {
-  value: string;
-  viewValue: string;
-}
-
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
@@ -22,13 +17,6 @@ export class UserListComponent implements OnInit {
   displayedColumns: string[] = ['photo', 'name', 'username', 'email', 'address', 'company'];
   dataSource: MatTableDataSource<IUser> = new MatTableDataSource();
   selectAll = 'all';
-
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
-
 
   // @ViewChild(MatPaginator) paginator: MatPaginator;
   // @ViewChild(MatSort) sort: MatSort;

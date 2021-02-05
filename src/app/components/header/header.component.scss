@@ -1,5 +1,6 @@
 .header {
   height: 80px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,5 +10,6 @@
 
   &__title {
     margin: 0;
+    text-align: center;
   }
 }
