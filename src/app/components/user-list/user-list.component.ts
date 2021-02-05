@@ -1,11 +1,12 @@
-import { IUser } from './../../models/user.model';
-import { UsersService } from './../../services/users.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { map } from 'rxjs/operators';
 import { MatSelectChange } from '@angular/material/select';
+import { Router } from '@angular/router';
+
+import { IUser } from './../../models/user.model';
+import { UsersService } from './../../services/users.service';
 
 
 @Component({
@@ -22,15 +23,13 @@ export class UserListComponent implements OnInit {
   selected = '';
   users: IUser[] = [];
 
-  // @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatPaginator) paginator: any;
   @ViewChild(MatSort)
   sort: MatSort = new MatSort();
 
-  constructor(private usersService: UsersService) { }
+  constructor(private usersService: UsersService, private router: Router) { }
 
   ngOnInit(): void {
-    console.log(this.sort);
-
     this.usersService
       .getUsersList()
       .subscribe(res => {
@@ -39,23 +38,20 @@ export class UserListComponent implements OnInit {
         this.dataSource.filterPredicate = (data, filter) =>
           data.company.name.toLocaleLowerCase().trim().includes(filter.toLocaleLowerCase().trim());
         this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
       });
   }
-
-  ngAfterViewInit() {
-    // console.log('ngAfterViewInit');
-    // this.dataSource.paginator = this.paginator;
-    // this.dataSource.sort = this.sort;
-  }
-
-
 
   applyFilter(event: MatSelectChange): void {
     const filterValue = event.value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
-    // if (this.dataSource.paginator) {
-    //   this.dataSource.paginator.firstPage();
-    // }
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
+  userClickHandler(id: string): void {
+    this.router.navigate(['user', id]);
   }
 }

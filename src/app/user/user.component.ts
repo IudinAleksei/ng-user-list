@@ -46,9 +46,6 @@ export class UserComponent implements OnInit {
       .getUserInfo(this.userID)
       .subscribe(res => {
         this.user = res[0];
-        if (!this.todos.length) {
-          this.router.navigate(['user']);
-        }
       });
 
     this.userService
