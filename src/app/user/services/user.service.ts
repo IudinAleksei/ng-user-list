@@ -1,4 +1,3 @@
-import { UserModule } from './../user.module';
 import { Injectable } from '@angular/core';
 import { EMPTY, Observable } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
