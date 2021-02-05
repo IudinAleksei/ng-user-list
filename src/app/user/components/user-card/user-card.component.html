@@ -1,10 +1,17 @@
 <mat-card class="example-card">
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>{{user.name}}</mat-card-title>
+    <mat-card-title-group>
+      <mat-card-title>{{user.name}}</mat-card-title>
+      <mat-card-subtitle>Username: {{user.username}}</mat-card-subtitle>
+    </mat-card-title-group>
   </mat-card-header>
-  <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
   <mat-card-content>
+    <img src="https://via.placeholder.com/120x180" [alt]="user.name" width="120" height="180">
+    <p>Email: {{user.email}}</p>
+    <p>Site: {{user.website}}</p>
+    <p>Phone: {{user.phone}}</p>
+    <p>Company: {{user.company.name}}</p>
+    <p>Address: {{user.address.zipcode}}</p>
     <p>
       {{str}}
     </p>

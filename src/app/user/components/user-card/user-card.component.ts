@@ -7,6 +7,7 @@ import { IUser } from 'src/app/models/user.model';
   styleUrls: ['./user-card.component.scss']
 })
 export class UserCardComponent implements OnInit {
+  str = '';
   @Input() user: IUser = {
     id: 1,
     name: 'Leanne Graham',
@@ -31,10 +32,9 @@ export class UserCardComponent implements OnInit {
     },
   };
 
-  str = JSON.stringify(this.user, null, 2);
-
   constructor() { }
 
   ngOnInit(): void {
+    this.str = JSON.stringify(this.user, null, '  ');
   }
 }

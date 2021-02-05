@@ -8,6 +8,10 @@
   overflow: auto;
 }
 
+.user-photo {
+  display: block;
+}
+
 table {
   width: 100%;
 }
@@ -18,5 +22,5 @@ table {
 }
 
 td, th {
-  width: 25%;
+  width: 20%;
 }
