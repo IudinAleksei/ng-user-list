@@ -4,6 +4,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +32,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     HttpClientModule,
     MatPaginatorModule,
     MatListModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

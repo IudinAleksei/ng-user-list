@@ -6,13 +6,11 @@
   align-items: center;
   justify-content: center;
 
-  &__back {
-    position: absolute;
-    left: 20px;
-    top: 10px;
-  }
-
   &__message {
     font-size: 2rem;
   }
+}
+
+.home-link {
+  margin: 0 10px;
 }
