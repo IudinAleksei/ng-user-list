@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSortModule } from '@angular/material/sort';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -43,7 +44,8 @@ import { FormatAddressPipe } from './pipes/format-address.pipe';
     MatTableModule,
     MatInputModule,
     MatSelectModule,
-    MatSortModule
+    MatSortModule,
+    MatTooltipModule
   ],
   providers: [
     // FormatAdressPipe,
