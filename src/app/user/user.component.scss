@@ -32,3 +32,17 @@
   align-items: center;
   justify-content: center;
 }
+
+@media(max-width: 799px) {
+  .user {
+    flex-direction: column;
+    &__card {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    &__todos {
+      width: 100%;
+    }
+  }
+}
