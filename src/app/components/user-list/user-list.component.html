@@ -22,14 +22,23 @@
 
       <ng-container matColumnDef="photo" >
         <th mat-header-cell *matHeaderCellDef> Photo </th>
-        <td class="clickable" mat-cell *matCellDef="let user" (click)="userClickHandler(user.id)" [matTooltip]="user.name" matTooltipPosition="above">
-          <img class="user-photo" src="https://via.placeholder.com/120x180" [alt]="user.name" width="120" height="180">
+        <td class="clickable" mat-cell *matCellDef="let user" (click)="userClickHandler(user.id)">
+          <img
+            class="user-photo"
+            src="https://via.placeholder.com/120x180"
+            [alt]="user.name"
+            width="120"
+            height="180"
+            [matTooltip]="user.name"
+            matTooltipPosition="after">
         </td>
       </ng-container>
 
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef mat-sort-header="name"> Name </th>
-        <td class="clickable" mat-cell *matCellDef="let user" (click)="userClickHandler(user.id)" [matTooltip]="user.name" matTooltipPosition="above"> {{user.name}} </td>
+        <td class="clickable" mat-cell *matCellDef="let user" (click)="userClickHandler(user.id)" >
+          <span [matTooltip]="user.name" matTooltipPosition="after">{{user.name}}</span>
+        </td>
       </ng-container>
 
       <ng-container matColumnDef="username">
