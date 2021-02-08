@@ -1,3 +1,4 @@
+import { MatSortModule } from '@angular/material/sort';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -25,7 +26,8 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
     MatCardModule,
     MatTableModule,
     MatButtonModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSortModule
   ]
 })
 export class UserModule { }
