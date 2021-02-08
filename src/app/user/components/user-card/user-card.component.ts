@@ -35,6 +35,6 @@ export class UserCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.str = JSON.stringify(this.user, null, '  ');
+    this.str = JSON.stringify(this.user.company, null, '  ');
   }
 }
