@@ -12,7 +12,7 @@ export class UserComponent implements OnInit {
   todos: ITodo[] = [];
   userID = '';
   user: IUser = {
-    id: 1,
+    id: 0,
     name: 'Leanne Graham',
     username: 'Bret',
     email: 'Sincere@april.biz',

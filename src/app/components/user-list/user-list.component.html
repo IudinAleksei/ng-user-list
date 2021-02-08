@@ -1,4 +1,4 @@
-<div class="user-list">
+<div class="user-list" *ngIf="users.length; else loader">
   <mat-paginator
       [length]="length"
       [pageSize]="pageSize"
@@ -52,3 +52,8 @@
   </div>
 
 </div>
+<ng-template #loader>
+  <div class="loader">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

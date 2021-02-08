@@ -9,7 +9,7 @@ import { IUser } from 'src/app/models/user.model';
 export class UserCardComponent implements OnInit {
   str = '';
   @Input() user: IUser = {
-    id: 1,
+    id: 0,
     name: 'Leanne Graham',
     username: 'Bret',
     email: 'Sincere@april.biz',
