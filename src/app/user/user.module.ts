@@ -1,3 +1,4 @@
+import { PrintObjPipe } from './pipes/print-obj.pipe';
 import { MatSortModule } from '@angular/material/sort';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -18,6 +19,7 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
     UserComponent,
     UserCardComponent,
     TodoListComponent,
+    PrintObjPipe
   ],
   imports: [
     CommonModule,

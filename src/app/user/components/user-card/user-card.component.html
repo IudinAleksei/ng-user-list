@@ -11,10 +11,11 @@
     <p>Email: {{user.email}}</p>
     <p>Site: {{user.website}}</p>
     <p>Phone: {{user.phone}}</p>
-    <p>Company: {{user.company.name}}</p>
-    <p>Address: {{user.address}}</p>
-    <p>
-      {{str}}
-    </p>
+    <ul>Address:
+      <li *ngFor="let string of user.address | printObj">{{string}}</li>
+    </ul>
+    <ul>Company:
+      <li *ngFor="let string of user.company | printObj">{{string}}</li>
+    </ul>
   </mat-card-content>
 </mat-card>
