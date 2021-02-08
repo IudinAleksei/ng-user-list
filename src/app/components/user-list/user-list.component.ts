@@ -38,7 +38,6 @@ export class UserListComponent implements OnInit {
         this.dataSource.filterPredicate = (data, filter) =>
           data.company.name.toLocaleLowerCase().trim().includes(filter.toLocaleLowerCase().trim());
         this.dataSource.sort = this.sort;
-        console.log(this.dataSource.sort);
         this.dataSource.paginator = this.paginator;
       });
   }
