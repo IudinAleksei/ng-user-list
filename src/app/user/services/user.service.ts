@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { EMPTY, Observable } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { EMPTY, Observable, throwError, } from 'rxjs';
+import { catchError, retry} from 'rxjs/operators';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { IUser } from './../../models/user.model';
 import { ITodo } from './../../models/todo.model';
@@ -25,7 +25,7 @@ export class UserService {
         retry(2),
         catchError(err => {
           console.warn('Error: ', err);
-          return EMPTY;
+          return throwError(err);
         })
       );
   }
@@ -39,7 +39,7 @@ export class UserService {
         retry(2),
         catchError(err => {
           console.warn('Error: ', err);
-          return EMPTY;
+          return throwError(err);
         })
       );
   }

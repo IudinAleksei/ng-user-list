@@ -49,12 +49,22 @@ export class UserComponent implements OnInit {
         if (!this.user) {
           this.router.navigate(['user']);
         }
-      });
+      },
+        err => {
+          this.router.navigate(['error']);
+          console.warn('HTTP Error: ', err);
+        }
+      );
 
     this.userService
       .getUserTodos(this.userID)
       .subscribe(res => {
         this.todos = res;
-      });
+      },
+        err => {
+        this.router.navigate(['error']);
+        console.warn('HTTP Error: ', err);
+        }
+      );
   }
 }

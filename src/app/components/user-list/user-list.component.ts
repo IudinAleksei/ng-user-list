@@ -39,7 +39,12 @@ export class UserListComponent implements OnInit {
           data.company.name.toLocaleLowerCase().trim().includes(filter.toLocaleLowerCase().trim());
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
-      });
+      },
+        err => {
+        this.router.navigate(['error']);
+        console.warn('HTTP Error: ', err);
+        }
+      );
   }
 
   applyFilter(event: MatSelectChange): void {

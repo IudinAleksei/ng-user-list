@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { EMPTY, Observable } from 'rxjs';
+import { EMPTY, Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { IUser } from './../models/user.model';
@@ -21,21 +21,7 @@ export class UsersService {
         retry(2),
         catchError(err => {
           console.warn('Error: ', err);
-          return EMPTY;
-        })
-      );
-  }
-
-  getUserTodos(id: string): Observable<ITodo[]> {
-    const params = new HttpParams()
-      .set(this.TODOS_PARAM, id.toString());
-
-    return this.http.get<ITodo[]>(this.TODOS_URL, { params })
-      .pipe(
-        retry(2),
-        catchError(err => {
-          console.warn('Error: ', err);
-          return EMPTY;
+          return throwError(err);
         })
       );
   }

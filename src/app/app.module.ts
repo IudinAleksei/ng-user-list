@@ -20,6 +20,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FormatUserPipe } from './pipes/format-user.pipe';
 import { ExtractCompanyPipe } from './pipes/extract-company.pipe';
 import { FormatAddressPipe } from './pipes/format-address.pipe';
+import { ErrorComponent } from './components/error/error.component';
 
 
 
@@ -30,6 +31,7 @@ import { FormatAddressPipe } from './pipes/format-address.pipe';
     HeaderComponent,
     UserListComponent,
     NotFoundComponent,
+    ErrorComponent,
     FormatUserPipe,
     ExtractCompanyPipe,
     FormatAddressPipe
@@ -48,9 +50,6 @@ import { FormatAddressPipe } from './pipes/format-address.pipe';
     MatSortModule,
     MatTooltipModule,
     MatProgressSpinnerModule
-  ],
-  providers: [
-    // FormatAdressPipe,
   ],
   bootstrap: [AppComponent]
 })

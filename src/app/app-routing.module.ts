@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { ErrorComponent } from './components/error/error.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: UserListComponent },
   { path: 'user/:id', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
+  { path: 'error', component: ErrorComponent },
   { path: 'user', component: NotFoundComponent },
   { path: '**', redirectTo: 'home' },
 ];
