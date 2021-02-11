@@ -47,13 +47,18 @@ export class UserListComponent implements OnInit {
       );
   }
 
-  applyFilter(event: MatSelectChange): void {
-    const filterValue = event.value;
+  applyFilter(): void {
+    const filterValue = this.selected;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  clearFilter(): void {
+    this.selected = '';
+    this.applyFilter();
   }
 
   userClickHandler(id: string): void {

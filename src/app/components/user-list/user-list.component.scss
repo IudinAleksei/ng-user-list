@@ -18,9 +18,21 @@
   min-width: 760px;
 }
 
-.mat-form-field {
+.user-filter {
+  position: relative;
   font-size: 14px;
   width: 100%;
+
+  &__select {
+    width: 100%;
+  }
+
+  &__clear {
+    position: absolute;
+    right: 23px;
+    top: 5px;
+    z-index: 1;
+  }
 }
 
 td, th {

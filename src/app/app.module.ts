@@ -12,6 +12,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatRippleModule } from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -51,7 +52,8 @@ import { ErrorComponent } from './components/error/error.component';
     MatSortModule,
     MatTooltipModule,
     MatProgressSpinnerModule,
-    MatRippleModule
+    MatRippleModule,
+    MatIconModule
   ],
   bootstrap: [AppComponent]
 })
