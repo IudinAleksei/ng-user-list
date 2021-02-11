@@ -21,12 +21,12 @@ export class UserListComponent implements OnInit {
   displayedColumns: string[] = ['photo', 'name', 'username', 'email', 'address'];
   sortOptions: { by: string, dir: SortDirection }[] = [
     { by: 'name', dir: 'asc' },
-    { by: 'username', dir: 'asc' },
-    { by: 'email', dir: 'asc' },
-    { by: 'address', dir: 'asc' },
     { by: 'name', dir: 'desc' },
+    { by: 'username', dir: 'asc' },
     { by: 'username', dir: 'desc' },
+    { by: 'email', dir: 'asc' },
     { by: 'email', dir: 'desc' },
+    { by: 'address', dir: 'asc' },
     { by: 'address', dir: 'desc' },
     ];
   dataSource: MatTableDataSource<IUser> = new MatTableDataSource();
