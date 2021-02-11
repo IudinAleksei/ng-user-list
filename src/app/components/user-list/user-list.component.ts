@@ -19,8 +19,10 @@ export class UserListComponent implements OnInit {
   length = 10;
   pageSize = 3;
   displayedColumns: string[] = ['photo', 'name', 'username', 'email', 'address'];
+  sortOptions: string[] = ['name', 'username', 'email', 'address'];
   dataSource: MatTableDataSource<IUser> = new MatTableDataSource();
   selected = '';
+  sortBy = 'name';
   users: IUser[] = [];
 
   @ViewChild(MatPaginator) paginator: any;
@@ -54,6 +56,11 @@ export class UserListComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  applySort(): void {
+    this.sort.active = this.sortBy;
+    this.dataSource.sort = this.sort;
   }
 
   clearFilter(): void {

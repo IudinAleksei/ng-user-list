@@ -22,6 +22,17 @@
     </mat-form-field>
   </div>
 
+  <div class="user-sort">
+    <mat-form-field class="user-filter__select" appearance="fill">
+      <mat-label>Sorting</mat-label>
+      <mat-select (selectionChange)="applySort()" [(value)]="sortBy">
+        <mat-option *ngFor="let sort of sortOptions" [value]="sort">
+          {{sort}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
   <div class="table-container mat-elevation-z8">
     <table class="users-table" mat-table [dataSource]="dataSource" matSort matSortActive="name" matSortDirection="asc" >
 
