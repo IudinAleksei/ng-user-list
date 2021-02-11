@@ -38,6 +38,14 @@
 td, th {
   width: 20%;
   padding: 0 5px !important;
+
+  &:first-of-type {
+    padding-left: 15px !important;
+  }
+
+  &:last-of-type {
+    padding-right: 15px !important;
+  }
 }
 
 .clickable {
