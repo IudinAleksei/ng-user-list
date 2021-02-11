@@ -13,8 +13,9 @@
   display: block;
 }
 
-table {
+.users-table {
   width: 100%;
+  min-width: 760px;
 }
 
 .mat-form-field {
@@ -24,6 +25,7 @@ table {
 
 td, th {
   width: 20%;
+  padding: 0 5px !important;
 }
 
 .clickable {

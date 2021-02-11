@@ -18,11 +18,11 @@
   </mat-form-field>
 
   <div class="table-container mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource" matSort matSortActive="name" matSortDirection="asc" >
+    <table class="users-table" mat-table [dataSource]="dataSource" matSort matSortActive="name" matSortDirection="asc" >
 
       <ng-container matColumnDef="photo" >
         <th mat-header-cell *matHeaderCellDef> Photo </th>
-        <td class="clickable" mat-cell *matCellDef="let user" (click)="userClickHandler(user.id)">
+        <td class="clickable" matRipple mat-cell *matCellDef="let user" (click)="userClickHandler(user.id)">
           <img
             class="user-photo"
             src="https://via.placeholder.com/120x180"
@@ -36,7 +36,7 @@
 
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef mat-sort-header="name"> Name </th>
-        <td class="clickable" mat-cell *matCellDef="let user" (click)="userClickHandler(user.id)" >
+        <td class="clickable" matRipple mat-cell *matCellDef="let user" (click)="userClickHandler(user.id)" >
           <span [matTooltip]="user.name" matTooltipPosition="after">{{user.name}}</span>
         </td>
       </ng-container>
