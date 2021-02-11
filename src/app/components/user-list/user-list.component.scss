@@ -63,6 +63,11 @@ td, th {
   }
 }
 
+mat-select-trigger, mat-option {
+  display: flex;
+  align-items: center;
+}
+
 @media(max-width: 799px) {
   .user-sort {
     display: block;

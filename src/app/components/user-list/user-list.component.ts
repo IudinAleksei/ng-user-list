@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { MatSort, SortDirection } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSelectChange } from '@angular/material/select';
 
@@ -19,10 +19,19 @@ export class UserListComponent implements OnInit {
   length = 10;
   pageSize = 3;
   displayedColumns: string[] = ['photo', 'name', 'username', 'email', 'address'];
-  sortOptions: string[] = ['name', 'username', 'email', 'address'];
+  sortOptions: { by: string, dir: SortDirection }[] = [
+    { by: 'name', dir: 'asc' },
+    { by: 'username', dir: 'asc' },
+    { by: 'email', dir: 'asc' },
+    { by: 'address', dir: 'asc' },
+    { by: 'name', dir: 'desc' },
+    { by: 'username', dir: 'desc' },
+    { by: 'email', dir: 'desc' },
+    { by: 'address', dir: 'desc' },
+    ];
   dataSource: MatTableDataSource<IUser> = new MatTableDataSource();
   selected = '';
-  sortBy = 'name';
+  currentSort = this.sortOptions[0];
   users: IUser[] = [];
 
   @ViewChild(MatPaginator) paginator: any;
@@ -59,7 +68,8 @@ export class UserListComponent implements OnInit {
   }
 
   applySort(): void {
-    this.sort.active = this.sortBy;
+    this.sort.active = this.currentSort.by;
+    this.sort.direction = this.currentSort.dir;
     this.dataSource.sort = this.sort;
   }
 
