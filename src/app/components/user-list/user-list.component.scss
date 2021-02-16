@@ -38,14 +38,6 @@
   }
 }
 
-.users-table tr {
-  transition: 0.3s all;
-  &:hover {
-    box-shadow: inset 0px 10px 10px #eaeaea, inset 0px -10px 10px #eaeaea;
-    background-color: #f9f9f9;
-  }
-}
-
 td, th {
   width: 20%;
   padding: 0 5px !important;
